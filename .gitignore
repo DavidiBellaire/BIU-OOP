@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Build output
+bin/
+
+# Old submission archives
+*.zip
+
+# Heavy/external build-environment artifacts (kept locally, not committed)
+checkstyle-*.jar

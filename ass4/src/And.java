@@ -80,7 +80,7 @@ public class And extends BinaryExpression {
         Expression right = this.getRight().simplify();
 
         // Step 2 — if there are no variables, fold to a constant.
-        if (this.getVariables().isEmpty()) {
+        if (left.getVariables().isEmpty() && right.getVariables().isEmpty()) {
             try {
                 return new Val(new And(left, right).evaluate());
             } catch (Exception e) {

@@ -1,0 +1,108 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <mxfile host="app.diagrams.net" modified="2026-05-16T00:00:00.000Z" agent="ChatGPT" version="24.7.8">\
+  <diagram name="UML" id="uml1">\
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850">\
+      <root>\
+        <mxCell id="0"/>\
+        <mxCell id="1" parent="0"/>\
+\
+        <!-- Ass3Game -->\
+        <mxCell id="2" value="Ass3Game\\n+ main(String[]): void" style="rounded=0;fillColor=#ff9999;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="480" y="20" width="180" height="80" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Game -->\
+        <mxCell id="3" value="Game\\n-sprites: SpriteCollection\\n-environment: GameEnvironment\\n-gui: GUI\\n-keyboard: KeyboardSensor\\n+addCollidable()\\n+addSprite()\\n+initialize()\\n+run()" style="rounded=0;fillColor=#ffb6c1;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="420" y="140" width="300" height="160" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- GameEnvironment -->\
+        <mxCell id="4" value="GameEnvironment\\n-collidables: List&lt;Collidable&gt;\\n+addCollidable()\\n+getClosestCollision()" style="rounded=0;fillColor=#ffcc80;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="150" y="330" width="260" height="120" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- SpriteCollection -->\
+        <mxCell id="5" value="SpriteCollection\\n-sprites: List&lt;Sprite&gt;\\n+addSprite()\\n+notifyAllTimePassed()\\n+drawAllOn()" style="rounded=0;fillColor=#ffcc80;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="420" y="330" width="260" height="120" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- CollisionInfo -->\
+        <mxCell id="6" value="CollisionInfo\\n-point: Point\\n-object: Collidable" style="rounded=0;fillColor=#ffcc80;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="700" y="330" width="220" height="100" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Interfaces -->\
+        <mxCell id="7" value="&lt;&lt;interface&gt;&gt;\\nCollidable\\n+getCollisionRectangle()\\n+hit()" style="rounded=0;fillColor=#d1c4e9;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="200" y="520" width="250" height="100" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="8" value="&lt;&lt;interface&gt;&gt;\\nSprite\\n+drawOn()\\n+timePassed()" style="rounded=0;fillColor=#d1c4e9;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="520" y="520" width="250" height="100" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Ball -->\
+        <mxCell id="9" value="Ball\\nimplements Sprite" style="rounded=0;fillColor=#80deea;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="50" y="650" width="250" height="160" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Block -->\
+        <mxCell id="10" value="Block\\nimplements Sprite, Collidable" style="rounded=0;fillColor=#80deea;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="350" y="650" width="250" height="160" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Paddle -->\
+        <mxCell id="11" value="Paddle\\nimplements Sprite, Collidable" style="rounded=0;fillColor=#80deea;whiteSpace=wrap;html=1;" vertex="1" parent="1">\
+          <mxGeometry x="650" y="650" width="250" height="160" as="geometry"/>\
+        </mxCell>\
+\
+        <!-- Edges -->\
+        <mxCell id="20" edge="1" parent="1" source="2" target="3" style="endArrow=block;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="21" edge="1" parent="1" source="3" target="4" style="endArrow=block;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="22" edge="1" parent="1" source="3" target="5" style="endArrow=block;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="23" edge="1" parent="1" source="4" target="7" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="24" edge="1" parent="1" source="5" target="8" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="25" edge="1" parent="1" source="9" target="8" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="26" edge="1" parent="1" source="10" target="7" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="27" edge="1" parent="1" source="11" target="7" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="28" edge="1" parent="1" source="10" target="8" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+        <mxCell id="29" edge="1" parent="1" source="11" target="8" style="dashed=1;endArrow=open;html=1;">\
+          <mxGeometry relative="1" as="geometry"/>\
+        </mxCell>\
+\
+      </root>\
+    </mxGraphModel>\
+  </diagram>\
+</mxfile>}

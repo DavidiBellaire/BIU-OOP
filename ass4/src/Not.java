@@ -87,8 +87,8 @@ public class Not extends UnaryExpression {
     public Expression simplify() {
         Expression inner = this.getExpression().simplify();
 
-        // Constant folding — no variables, evaluate directly.
-        if (this.getVariables().isEmpty()) {
+        // Constant folding — simplified inner has no variables, evaluate directly.
+        if (inner.getVariables().isEmpty()) {
             try {
                 return new Val(new Not(inner).evaluate());
             } catch (Exception e) {

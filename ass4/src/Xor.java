@@ -78,7 +78,7 @@ public class Xor extends BinaryExpression {
         Expression left = this.getLeft().simplify();
         Expression right = this.getRight().simplify();
 
-        if (this.getVariables().isEmpty()) {
+        if (left.getVariables().isEmpty() && right.getVariables().isEmpty()) {
             try {
                 return new Val(new Xor(left, right).evaluate());
             } catch (Exception e) {

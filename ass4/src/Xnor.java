@@ -79,25 +79,26 @@ public class Xnor extends BinaryExpression {
      * @return a simplified expression.
      */
     public Expression simplify() {
-        Expression left = this.getLeft().simplify();
-        Expression right = this.getRight().simplify();
+    Expression left = this.getLeft().simplify();
+    Expression right = this.getRight().simplify();
 
-        if (this.getVariables().isEmpty()) {
-            try {
-                return new Val(new Xnor(left, right).evaluate());
-            } catch (Exception e) {
-                return new Xnor(left, right);
-            }
+    // constant folding — אם אין משתנים, חשב ישירות
+    if (left.getVariables().isEmpty() && right.getVariables().isEmpty()) {
+        try {
+            return new Val(new Xnor(left, right).evaluate());
+        } catch (Exception e) {
+            return new Xnor(left, right);
         }
-
-        String leftStr = left.toString();
-        String rightStr = right.toString();
-
-        // x # x = T
-        if (leftStr.equals(rightStr)) {
-            return new Val(true);
-        }
-
-        return new Xnor(left, right);
     }
+
+    String leftStr = left.toString();
+    String rightStr = right.toString();
+
+    // x # x = T
+    if (leftStr.equals(rightStr)) {
+        return new Val(true);
+    }
+
+    return new Xnor(left, right);
+}
 }
