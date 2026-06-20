@@ -1,4 +1,5 @@
 /*id: 214165417 */
+import game.Game;
 
 /**
  * This class is the entry point of the Arkanoid game. It creates

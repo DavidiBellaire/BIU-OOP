@@ -209,6 +209,12 @@ public class Game {
     }
 
 
+    /**
+     * Creates the blocks in a pyramid pattern, and registers a
+     * BlockRemover and ScoreTrackingListener as their listeners so that
+     * they are removed from the game and the score is updated when they
+     * are hit.
+     */
     private void createBlocks() {
         Color[] rowColors = {Color.GRAY, Color.RED, Color.YELLOW,
                 Color.BLUE, Color.PINK, Color.GREEN};
